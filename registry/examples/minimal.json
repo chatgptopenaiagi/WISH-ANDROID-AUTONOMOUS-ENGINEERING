@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "generation": "synthetic-example-v1",
+  "capabilities": [
+    {
+      "id": "python.web", "name": "Python local web development", "version": "example",
+      "runtime": "linux-proot", "architecture": "aarch64", "environment": "dev",
+      "languages": ["Python", "JavaScript", "HTML", "CSS"], "dependencies": ["python"],
+      "use_cases": ["Local websites and APIs"], "limitations": ["Synthetic fixture; not an installed tool record."],
+      "keywords": ["website", "site", "web", "pagină", "api"],
+      "verification": {"status": "metadata_only", "scope": "synthetic", "device": "example-device", "checked_at": null, "expires_at": null, "probe": null}
+    },
+    {
+      "id": "python.math", "name": "Numerical Python", "version": "example",
+      "runtime": "linux-proot", "architecture": "aarch64", "environment": "math",
+      "languages": ["Python"], "dependencies": ["python", "numpy"],
+      "use_cases": ["Scientific calculations and fractals"], "limitations": ["Synthetic fixture; not an installed tool record."],
+      "keywords": ["fractal", "fractali", "matematică", "mathematical", "științific", "scientific", "analiză de date"],
+      "verification": {"status": "metadata_only", "scope": "synthetic", "device": "example-device", "checked_at": null, "expires_at": null, "probe": null}
+    },
+    {
+      "id": "python.ai", "name": "CPU machine learning", "version": "example",
+      "runtime": "linux-proot", "architecture": "aarch64", "environment": "ai",
+      "languages": ["Python"], "dependencies": ["python", "torch"],
+      "use_cases": ["Bounded CPU inference"], "limitations": ["Synthetic fixture; no GPU or model access established."],
+      "keywords": ["machine learning", "artificial intelligence", "inteligență artificială", "pytorch"],
+      "verification": {"status": "metadata_only", "scope": "synthetic", "device": "example-device", "checked_at": null, "expires_at": null, "probe": null}
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "evidence_class": "repository_automated",
+  "recorded_at": "2026-11-10T00:16:10.225007+00:00",
+  "runtime": {
+    "python": "3.12.15",
+    "machine": "aarch64",
+    "platform": "Linux userspace on the Vivo reference device"
+  },
+  "unit_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "run": 37,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "status": "PASS"
+  },
+  "publication_guard": {
+    "status": "PASS",
+    "files_checked": 41,
+    "findings": 0,
+    "source": "Git index blobs"
+  },
+  "preservation": {
+    "protected_reference_files_checked": 50,
+    "changed": 0
+  },
+  "unverified": [
+    "PowerShell execution on the Ryzen workstation",
+    "GitHub Actions workflow execution",
+    "Android SDK/Gradle build",
+    "WISH APK installation",
+    "Clean-device provisioning",
+    "Cross-device compatibility"
+  ],
+  "software_installed": [],
+  "new_codex_sessions_started": false,
+  "sentinel_modified": false,
+  "workflow_static_validation": {
+    "status": "PASS",
+    "yaml_parser_version": "6.0.3",
+    "remote_actions_executed": false
+  },
+  "publication_visibility": "public",
+  "publication_authority": "Explicit owner decision: WISH is a public engineering project."
+}

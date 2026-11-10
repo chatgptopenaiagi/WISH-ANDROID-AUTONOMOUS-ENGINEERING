@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WISH portable capability catalogue v1",
+  "description": "Structural contract. Python validator additionally checks unique IDs and chronological/evidence coherence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generation",
+    "capabilities"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "generation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "capabilities": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "version",
+          "architecture",
+          "environment",
+          "runtime",
+          "languages",
+          "dependencies",
+          "use_cases",
+          "limitations",
+          "keywords",
+          "verification"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "architecture": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "environment": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "runtime": {
+            "enum": [
+              "linux-proot",
+              "android-native",
+              "windows"
+            ]
+          },
+          "languages": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "use_cases": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "keywords": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "scope",
+              "device",
+              "checked_at",
+              "expires_at",
+              "probe"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "metadata_only",
+                  "passed",
+                  "failed",
+                  "proposed"
+                ]
+              },
+              "scope": {
+                "enum": [
+                  "synthetic",
+                  "reference_device",
+                  "local_device"
+                ]
+              },
+              "device": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "checked_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "expires_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "probe": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

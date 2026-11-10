@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "curated_at": "2026-11-10T00:04:55.343212+00:00",
+  "reference_observation_date": "2026-11-09",
+  "device": {
+    "label": "Vivo V2450 reference",
+    "android": "16",
+    "cpu_architecture": "aarch64",
+    "cpu_count": 8,
+    "ram_approx_gib": 7.5,
+    "root_access": "Not established; guest root identity does not prove Android root"
+  },
+  "records": [
+    {
+      "id": "hub-browser",
+      "evidence_class": "reference_automated",
+      "source_report_basename": "browser-checks.json",
+      "source_sha256": "406bed766e63119c2818f0df224b1e3ee7d98dca0342f627381517d21331b328",
+      "scope": "Vivo reference installation; not clean-device WISH APK",
+      "passed": 14,
+      "failed": 0,
+      "operations": [
+        "ui-start-and-existing-session",
+        "mobile-390-layout",
+        "simulated-touch-navigation-and-resources",
+        "capability-search-filter-and-evidence",
+        "project-discovery",
+        "real-job-completion-monitor",
+        "browser-artifact-download",
+        "registered-app-start-via-ui",
+        "open-generated-app-and-use",
+        "generated-app-json-export",
+        "registered-app-stop-via-ui",
+        "registered-app-restart-via-ui",
+        "session-recheck",
+        "mobile-360-layout"
+      ]
+    },
+    {
+      "id": "hub-integration",
+      "evidence_class": "reference_automated",
+      "source_report_basename": "live-checks.json",
+      "source_sha256": "f602d430a14febf3a596b300c78f3850f334ba1174ae06411e645ee8909b6db3",
+      "scope": "Vivo reference installation; not clean-device WISH APK",
+      "passed": 13,
+      "failed": 0,
+      "operations": [
+        "startup-http",
+        "idempotent-start",
+        "sse-real-snapshot",
+        "restart-with-open-sse",
+        "same-session-binding",
+        "journal-survives-restart",
+        "live-registry",
+        "existing-simulation-preserved-and-reachable",
+        "interpreter-dev",
+        "interpreter-ai",
+        "interpreter-math",
+        "interpreter-forge",
+        "protected-infrastructure"
+      ]
+    },
+    {
+      "id": "hub-final-browser",
+      "evidence_class": "reference_automated",
+      "source_report_basename": "final-browser.json",
+      "source_sha256": "ef3fda4e6600aaa126edca8869506c7d9d27ce391fb9b15baca94af8dddf4570",
+      "scope": "Vivo reference installation; not clean-device WISH APK",
+      "status": "PASS",
+      "operations": [
+        "Final Hub build UI",
+        "Actual registered app restart button"
+      ]
+    },
+    {
+      "id": "hub-android-contact",
+      "evidence_class": "reference_automated",
+      "source_report_basename": "android-browser-contact.json",
+      "source_sha256": "a49da6458cdca157a768f7c2a6eeca4a55098324931b583a762a25726f14e6e4",
+      "scope": "Vivo reference installation; not clean-device WISH APK",
+      "android_http_observed": true,
+      "javascript_bootstrap_observed": true
+    },
+    {
+      "id": "simulation-physical",
+      "evidence_class": "user_verified",
+      "source_report_basename": "user-verified-20261109T213109996586Z.json",
+      "source_sha256": "3f5a4aa5b8a4ae1122496ff91a015cfc49cdf7d52a4ecf0623c5ee6045a7b515",
+      "scope": "Vivo reference installation; not clean-device WISH APK",
+      "status": "USER-VERIFIED",
+      "operations": [
+        "Graphical interface displays correctly",
+        "Mandelbrot fractal renders successfully",
+        "WebGL2 acceleration operates correctly",
+        "Two-finger pinch-to-zoom works on the physical touchscreen",
+        "PNG export works through the Android browser"
+      ]
+    }
+  ],
+  "reference_software": {
+    "codex_cli": "0.167.0",
+    "python_named_environments": "3.12.15",
+    "fastapi": "0.156.4",
+    "uvicorn": "0.54.0",
+    "websockets": "17.3"
+  },
+  "additional_archived_checks": {
+    "hub_api_tests": 25,
+    "text_demo_python_tests": 6,
+    "named_python_environments": [
+      "vivo-dev",
+      "vivo-ai",
+      "vivo-math"
+    ],
+    "miniforge_python_execution": true,
+    "cpu_pytorch": "Bounded CPU tensor/model operations verified; no CUDA inference established"
+  },
+  "limitations": [
+    "Archived results are not current service uptime.",
+    "Synthetic repository fixtures do not establish device capabilities.",
+    "Hub physical gestures are not user-verified; simulation has five physical confirmations.",
+    "No WISH APK, clean install, independent runtime or cross-device compatibility is established.",
+    "No private paths, session IDs, runtime addresses, credentials, queue payloads or raw logs exported."
+  ]
+}

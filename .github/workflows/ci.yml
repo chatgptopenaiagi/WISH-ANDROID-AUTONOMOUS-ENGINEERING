@@ -1,0 +1,29 @@
+name: Portable contracts
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified at M1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6, verified at M1
+        with:
+          python-version: '3.12'
+      - name: Portable unit tests
+        run: python -B -m unittest discover -s tests -v
+      - name: Staged or tracked source publication checks
+        run: python -B scripts/check_repository.py
+      - name: PowerShell 7 entrypoint
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/Test-Repository.ps1
