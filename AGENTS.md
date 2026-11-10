@@ -12,6 +12,7 @@ Use existing software first. Run `python -B -m unittest discover -s tests -v`
 and `python -B scripts/check_repository.py` before committing. The portable
 checks need Python 3.12+ and the standard library. Write temporary data under
 the ignored `.local/` directory. Test fixtures must be explicitly synthetic.
+Use explicit UTF-8 for portable text files; do not rely on the Windows locale.
 
 Distinguish implemented repository code, archived reference-device verification,
 user verification, untested proposals, and current live checks. Evidence is scoped

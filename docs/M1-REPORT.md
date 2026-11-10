@@ -15,9 +15,11 @@ or converted into an APK. DRAGONHYDRA was not accessed.
 - Dependency-free tests and Git-index publication/privacy checks.
 - A PowerShell 7 helper and Windows/Linux GitHub Actions configuration.
 
-The local run and platform scope are in evidence/m1-validation.json. The Windows
-script and CI jobs are prepared; they are not described as executed until their
-own results exist. No Android SDK, Gradle wrapper, APK, Linux image, model, account
+The local run and platform scope are in evidence/m1-validation.json. GitHub Actions
+was started by public delivery: Linux passed, and the first Windows run exposed a
+locale-dependent Romanian catalogue read. The loader now specifies UTF-8; current
+run results are available on the repository's Actions page. Hosted CI is separate
+from the untested Ryzen workstation. No Android SDK, Gradle wrapper, APK, Linux image, model, account
 credential or actual installer is bundled.
 
 ## Verified reference reuse

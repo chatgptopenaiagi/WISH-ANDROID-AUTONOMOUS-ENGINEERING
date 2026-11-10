@@ -18,6 +18,11 @@ Private repository cloning requires the user's supported GitHub authentication.
 The script finds an existing Python interpreter and runs dependency-free tests
 and repository checks. It installs nothing and starts no Codex process.
 
+Read portable JSON/text as UTF-8 explicitly. The first GitHub Windows run exposed
+a locale-dependent catalogue read that corrupted Romanian characters; the test
+fixture loader now specifies UTF-8. A hosted Windows CI run is separate evidence
+from validation on the owner's Ryzen workstation.
+
 ## M2 toolchain investigation
 
 Record Windows version/architecture, PowerShell, JDK, Android Studio, SDK tools,

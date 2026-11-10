@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class RegistryTests(unittest.TestCase):
     def setUp(self):
-        self.catalog = json.loads((ROOT / 'registry/examples/minimal.json').read_text())
+        self.catalog = json.loads((ROOT / 'registry/examples/minimal.json').read_text(encoding='utf-8'))
         self.context = {'device': 'fixture-device', 'runtime': 'linux-proot', 'architecture': 'aarch64',
                         'as_of': '2026-01-02T12:00:00+00:00'}
 

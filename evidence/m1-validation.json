@@ -1,6 +1,6 @@
 {
   "evidence_class": "repository_automated",
-  "recorded_at": "2026-11-10T00:16:10.225007+00:00",
+  "recorded_at": "2026-11-10T00:19:08.408520+00:00",
   "runtime": {
     "python": "3.12.15",
     "machine": "aarch64",
@@ -26,7 +26,6 @@
   },
   "unverified": [
     "PowerShell execution on the Ryzen workstation",
-    "GitHub Actions workflow execution",
     "Android SDK/Gradle build",
     "WISH APK installation",
     "Clean-device provisioning",
@@ -38,8 +37,18 @@
   "workflow_static_validation": {
     "status": "PASS",
     "yaml_parser_version": "6.0.3",
-    "remote_actions_executed": false
+    "remote_actions_executed": true
   },
   "publication_visibility": "public",
-  "publication_authority": "Explicit owner decision: WISH is a public engineering project."
+  "publication_authority": "Explicit owner decision: WISH is a public engineering project.",
+  "ci_history": [
+    {
+      "run_id": 42727140875,
+      "commit": "e42e63806f69bb3456e9b4a06c337930ceb307df",
+      "linux": "PASS",
+      "windows": "FAIL",
+      "diagnosis": "Locale-dependent JSON decoding affected Romanian keywords; fixture loader corrected to explicit UTF-8.",
+      "later_run_status": "Consult GitHub Actions for the corresponding commit."
+    }
+  ]
 }
